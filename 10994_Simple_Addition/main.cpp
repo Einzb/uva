@@ -10,9 +10,9 @@
 #include <iostream>
 using namespace std;
 
-int f(int n); // function F(n), which is defined in problem
-long long int sum(int from, int to); // get the sum of an arithmetic progression
-long long int f_sum(int from, int to); // get the sum of sequence F(n)
+int f(int n);
+long long int sum(int from, int to);
+long long int f_sum(int from, int to);
 
 
 int main(){
@@ -35,10 +35,8 @@ int f(int n)
 
 long long int sum(int from, int to)
 {
-    // count the elements between from(var) and to(var)
     int count = to - from + 1;
 
-    // formula of arithmetic series
     return (from+to) * count / 2;
 }
 
@@ -47,13 +45,10 @@ long long int f_sum(int from, int to)
 {
     long long ans(0);
 
-    // take every 10 number as an interval, start from 0
-    // case of from(var) and to(var) in the same interval
     if((from/10) == (to/10)){
         ans += sum(f(from), f(to));
     }
     else{
-        // sum of the numbers which doesn't make a complete interval
         if(from%10){
             ans += sum(f(from), 9);
             from += (10-from%10);
@@ -63,10 +58,7 @@ long long int f_sum(int from, int to)
             to -= to%10;
         }
 
-        //  sum of the numbers which the last digit is not 0
         ans += (sum(1, 9) * (to/10 - from/10));
-        // sum of the numbers which the last digit is 0
-        // if last digit is 0, then F(num) = F(num/10)
         ans += f_sum(from/10, to/10);
     }
 
