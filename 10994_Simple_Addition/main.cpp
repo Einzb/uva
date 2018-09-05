@@ -2,8 +2,8 @@
 // https://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=1935
 //
 // code by Jason Huang aka Einz
-// github: https://github.com/Einzb
-// website: https://einzmind.blogspot.tw
+// github: https://github.com/PM25
+// website: https://pm25.github.io
 // discord: https://discord.gg/G4jEeDC
 // email: jason199786109@gmail.com
 
